@@ -50,5 +50,12 @@ def main():
     average=sum(score_list)/len(score_list)
     print(f"Average Score of the class is {average:.2f}")
 
+    with open("grades_output.csv","w",newline='') as f:
+        writing=csv.writer(f)
+        writing.writerow(["Name","Score","Grade"])
+        for i in range(len(name_list)):
+            writing.writerow([name_list[i],score_list[i],grade_list[i]])
+
+
 if __name__== "__main__":
     main()
